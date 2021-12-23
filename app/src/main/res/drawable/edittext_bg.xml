@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <stroke
+                android:width="3dp"
+                android:color="@color/officialBlack" />		//邊框線顏色
+            <solid android:color="#ffffff" >		//背景顏色
+            </solid>
+            <padding android:right="5dp" />		//邊距
+        </shape>
+    </item>
+</layer-list>
