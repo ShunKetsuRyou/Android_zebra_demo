@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        card_view:cardBackgroundColor="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="407dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/deptcardviewviewstroke"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/passPhase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="245dp"
+                android:layout_marginTop="10dp"
+                android:text="初"
+                android:textColor="@color/officialBrown"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/inventoryStatusShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/inventoryLabelShow"
+                android:layout_alignEnd="@id/passPhase"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/inventoryLabelShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/passPhase"
+                android:layout_alignEnd="@id/passPhase"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameShow"
+                android:layout_marginStart="5dp"
+                android:textColor="@android:color/darker_gray"
+                android:text="@string/數量"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/countInsert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/count"
+                android:layout_marginStart="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/nameShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/custodian"
+                android:layout_marginStart="5dp"
+                android:text="LA12000464"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/productNameShow"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productNameTitle"
+                android:layout_marginStart="5dp"
+                android:text="@string/productNameShow"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/specTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_below="@+id/productNameShow"
+                android:text="@string/規格"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/productNameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_below="@+id/assetId"
+                android:text="@string/品名"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/custodian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_below="@+id/specShow"
+                android:text="@string/保管人"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/specShow"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/specTitle"
+                android:layout_marginStart="5sp"
+                android:text="@string/specshow"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"  />
+
+            <TextView
+                android:id="@+id/assetId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:text="TextView"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+
