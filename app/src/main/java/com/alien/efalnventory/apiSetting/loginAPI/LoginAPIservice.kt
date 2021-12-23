@@ -15,7 +15,7 @@ class LoginRetrofitManager {
         val contentType = "application/json".toMediaType()
 
         return loginRetrofit
-            .baseUrl("http://adportalqc.pegatroncorp.com")
+            .baseUrl("http://adportalqc.pXXXXXXrp.com")
             .addConverterFactory(Json.asConverterFactory(contentType))
     }
 
