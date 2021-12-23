@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        card_view:cardBackgroundColor="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/deptcardviewviewstroke"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/totalCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/下載數"
+                android:textColor="@color/officialBlack"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/noneInventoryCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/totalCount"
+                android:layout_marginTop="75dp"
+                android:gravity="end"
+                android:text="@string/未盤點數"
+                android:textColor="@color/officialBrown"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/inventoryCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/totalCount"
+                android:layout_marginTop="110dp"
+                android:gravity="end"
+                android:text="@string/已盤點數"
+                android:textColor="@color/officialLightBlue"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/uploadCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/totalCount"
+                android:layout_marginTop="145dp"
+                android:gravity="end"
+                android:text="@string/已上傳數"
+                android:textColor="@color/officialBlack"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/custodianList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deptId"
+                android:layout_alignLeft="@+id/deptName"
+                android:text="@string/部門窗口"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/custodianDemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/custodianList"
+                android:layout_alignLeft="@+id/custodianList"
+                android:text="@string/負責人"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/deptNameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/部門名稱"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/deptName"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deptNameTitle"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="18dp" />
+
+
+            <TextView
+                android:id="@+id/deptId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deptName"
+                android:layout_alignLeft="@+id/deptName"
+                android:textColor="@android:color/black"
+                android:textSize="15dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+
