@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="50dp"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:paddingTop="50dp"
+    tools:context=".ui.LoginActivity" >
+
+    <TextView
+        android:id="@+id/textView_EFA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="PEGA"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="36sp" />
+    <TextView
+        android:id="@+id/versionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button_Login"
+        android:text= "versionName"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView_Inventory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:text="@string/盤點"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25sp" />
+
+
+
+    <EditText
+        android:id="@+id/editText_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:layout_marginTop="249dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="@string/帳號"
+        android:ems="10">
+
+        <requestFocus />
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/editText_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="309dp"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_bg"
+        android:ems="10"
+        android:hint="@string/密碼"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button_Login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editText_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:onClick="login"
+        android:background="@color/officialBlack"
+        android:text="LOG IN" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="189dp"
+        android:textSize="30sp"
+        android:background="@drawable/loginspinner_bg"
+        android:layout_marginLeft="0dp"
+        android:ems="10"
+        android:enabled="true" />
+
+
+</RelativeLayout>
