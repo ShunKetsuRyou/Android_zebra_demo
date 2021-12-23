@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".ui.DeptSelectActivity">
+
+    <TextView
+        android:id="@+id/textview_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="11sp" />
+
+
+    <Button
+        android:id="@+id/buttonUpload"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/inventory_button_shape"
+        android:onClick="upLoadData"
+        android:text="upload"
+        android:textColor="#FFFFFF	" />
+
+    <Button
+        android:id="@+id/buttonError"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="10dp"
+        android:background="#00000000"
+        android:onClick="showErrorMessage"
+        android:text="0\nERROR"
+        android:textSize="15sp"
+        android:textColor="@color/officialPink" />
+
+
+
+    <TextView
+        android:id="@+id/textview_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:textSize="20sp" />
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="60dp"
+        app:iconifiedByDefault="false"
+        android:background="@drawable/searchview_stroke"
+        android:queryHint="Search Here"
+        app:searchHintIcon="@null" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="120dp" />
+
+</RelativeLayout>
