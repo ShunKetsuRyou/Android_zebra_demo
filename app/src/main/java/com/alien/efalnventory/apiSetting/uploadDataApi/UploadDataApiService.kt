@@ -15,7 +15,7 @@ class UploadDataApiService {
         val contentType = "application/json".toMediaType()
 
         return retrofit
-            .baseUrl("http://ptwsvcdev.pegatroncorp.com")
+            .baseUrl("http://ptwsvcdev.pCCCCCCCCCp.com")
             .addConverterFactory(Json.asConverterFactory(contentType))
     }
 
