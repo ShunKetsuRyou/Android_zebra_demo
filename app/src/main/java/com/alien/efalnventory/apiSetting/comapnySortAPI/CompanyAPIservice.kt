@@ -15,7 +15,7 @@ class RetrofitManager {
         val contentType = "application/json".toMediaType()
 
         return retrofit
-            .baseUrl("http://ptwsvcdev.pegatroncorp.com")
+            .baseUrl("http://ptwsvcdev.pXXXXXXXXp.com")
             .addConverterFactory(Json.asConverterFactory(contentType))
     }
 
