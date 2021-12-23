@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".ui.InventoryActivity">
+
+
+
+
+    <TextView
+        android:id="@+id/deptname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_below="@+id/deptnamenumber"
+        android:text="這裡要放部門名稱"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/deptnamenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:text="這裡要放部門名稱英文編號"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="10sp" />
+
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="35dp"
+        android:layout_below="@+id/deptname"
+        android:background="@drawable/searchview_stroke"
+        app:iconifiedByDefault="false"
+        android:queryHint="Search Here"
+        app:searchHintIcon="@null" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/noninventory"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/scanlistview" />
+
+
+    <TextView
+        android:id="@+id/inventorydata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchView"
+        android:layout_marginStart="35dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="@string/盤點資料"
+        android:padding = "1dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/noninventory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_below="@+id/listView"
+        android:text="@string/未盤點"
+        android:padding = "1dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="12sp" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:padding = "1dp"
+        android:layout_below="@+id/inventorydata"
+        android:layout_marginStart="35dp"
+        android:background="@drawable/scanlistview"
+        android:divider="@null" />
+
+
+
+</RelativeLayout>
