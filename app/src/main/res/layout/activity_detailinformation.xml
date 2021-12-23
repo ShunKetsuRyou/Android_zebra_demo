@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailInformationActivity">
+
+
+    <TextView
+        android:id="@+id/productNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/品名"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/productNameTitle"
+        android:layout_marginStart="100dp"
+        android:ems="16"
+        android:inputType="textPersonName" />
+
+
+    <TextView
+        android:id="@+id/specTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/productNameTitle"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:text="@string/規格"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/spec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/specTitle"
+        android:layout_marginStart="100dp"
+        android:ems="16"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/partNoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/productNameTitle"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="200dp"
+        android:text="@string/料號"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/partNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/partNoTitle"
+        android:layout_marginStart="100dp"
+        android:ems="16"
+        android:inputType="textPersonName" />
+
+
+    <TextView
+        android:id="@+id/group2Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/productNameTitle"
+        android:layout_marginTop="250dp"
+        android:text="@string/設備類別"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/group2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/group2Title"
+        android:layout_marginStart="100dp"
+        android:ems="16"
+        android:inputType="textPersonName" />
+
+
+    <TextView
+        android:id="@+id/group3Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/productNameTitle"
+        android:layout_marginTop="300dp"
+        android:text="@string/設備用途"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/group3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/group3Title"
+        android:layout_marginStart="100dp"
+        android:ems="16"
+        android:inputType="textPersonName" />
+
+
+    <TextView
+        android:id="@+id/deptNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/productNameTitle"
+        android:layout_marginTop="350dp"
+        android:text="@string/保管人"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/deptName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/deptNameTitle"
+        android:layout_marginStart="100dp"
+        android:ems="16"
+        android:inputType="textPersonName" />
+
+
+    <TextView
+        android:id="@+id/costCornerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/productNameTitle"
+        android:layout_marginTop="400dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="@string/掛帳部門"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+    <TextView
+        android:id="@+id/costCorner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/costCornerTitle"
+        android:layout_marginStart="100dp"
+        android:ems="16"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/財產編號"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
