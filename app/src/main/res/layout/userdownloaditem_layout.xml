@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="download"
+            type="com.alien.efaInventory.dataModel.localDataProcessModel.DownloadData" />
+
+        <variable
+            name="onclick"
+            type="com.alien.efaInventory.interfaces.DataDownloadInterface" />
+
+    </data>
+
+
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@{download.id}"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/txtItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="35dp"
+            android:textColor="@color/officialBlack"
+            android:text="@{download.scope}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtPhase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="30dp"
+            android:text="@{download.phase}"
+            android:textColor="@color/officialBrown"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/officialBlack"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="30dp"
+            android:text="@{download.startDate}"
+            android:textSize="11sp" />
+    <TextView
+        android:id="@+id/txtEndDate"
+        android:layout_width="wrap_content"
+        android:textSize="11sp"
+        android:layout_height="wrap_content"
+        android:text="@{download.endDate}"
+        android:layout_marginTop="45dp"
+        android:textColor="@color/officialBlack"
+        android:layout_marginStart="250dp" />
+
+
+
+    <Button
+        android:id="@+id/buttonDownload"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/officialBlack"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/download_shape"
+        android:onClick="@{()-> onclick.downloadInventoryData(download)}"
+        android:text="@string/download" />
+
+    <Button
+        android:id="@+id/buttonTakeInventory"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:textColor="#FFFFFF	"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="200dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="false"
+        android:singleLine="false"
+        android:onClick="@{()-> onclick.takeInventory(download)}"
+        android:background="@drawable/inventory_button_shape"
+        android:text="@string/take_10_inventory" />
+    </RelativeLayout>
+</layout>
