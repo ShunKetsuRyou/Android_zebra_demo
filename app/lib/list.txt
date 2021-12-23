@@ -1,0 +1,22 @@
+ timber-lint-3.1.0.jar 
+  androidx.navigation.safeargs.kotlin.gradle.plugin-2.4.0-alpha10.pom	commit first	2 months ago
+ bytecoder.api-2021-07-23.jar	commit 20211105	1 month ago
+ com.android.volley-2015.05.28.jar	commit 20211105	1 month ago
+ commons-csv-1.5.jar	commit 20211105	1 month ago
+ commons-io-2.4.jar	commit 20211105	1 month ago
+ converter-gson-2.3.0.jar	commit first	2 months ago
+ fuel-kotlinx-serialization-2.3.1.jar	commit first	2 months ago
+ gson-2.8.5.jar	commit first	2 months ago
+ java.base-2021-07-23.jar	commit 20211105	1 month ago
+ kotlinx-serialization-core-jvm-1.0.1.jar	commit first	2 months ago
+ kotlinx-serialization-json-jvm-1.0.1.jar	commit first	2 months ago
+ material-1.4.0.aar	commit 20211109	4 weeks ago
+ navigation-fragment-2.3.5.aar	commit first	2 months ago
+ navigation-safe-args-gradle-plugin-1.0.0.jar	commit first	2 months ago
+ navigation-ui-2.3.5.aar	commit first	2 months ago
+ opencsv-4.6.jar	commit 20211105	1 month ago
+ picasso-2.5.2.jar	commit first	2 months ago
+ retrofit2-kotlinx-serialization-converter-0.8.0.jar	commit first	2 months ago
+ slf4j-api-1.7.32.jar	commit 20211105	1 month ago
+ sorted-list-adapter-0.3.0.27.aar	commit first	2 months ago
+ square-14.0.0.20210818.jar
