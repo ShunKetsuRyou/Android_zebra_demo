@@ -1,0 +1,189 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlinx-serialization'
+apply plugin: 'kotlin-kapt'
+apply plugin: "org.sonarqube"
+apply plugin: 'jacoco'
+apply plugin: "com.starter.easylauncher"
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.pega.efa"
+        minSdkVersion 26
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        resValue "string", "version_code", "Version: " + versionName + " ( " + versionCode + " )"
+    }
+
+    buildTypes {
+        release {
+
+            minifyEnabled false
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+
+            manifestPlaceholders = [buildTypeSuffix: ""]
+        }
+
+        debug {
+
+            testCoverageEnabled false
+            applicationIdSuffix ".debug"
+
+            manifestPlaceholders = [buildTypeSuffix: ".debug"]
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+        kotlinOptions {
+
+            freeCompilerArgs += [
+                    "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                    "-Xuse-experimental=kotlinx.coroutines.ObsoleteCoroutinesApi"]
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    sonarqube {
+
+        properties {
+
+            property 'sonar.projectName', 'SmartWarehouse'
+            property 'sonar.coverage.jacoco.xmlReportPaths', '/var/jenkins_home/workspace/CSCWMS/app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml'
+        }
+    }
+
+    packagingOptions {
+
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    task jacocoTestReport(type: JacocoReport) {
+
+        dependsOn("test")
+
+        def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*', '**/model/*', '**/koin/*.*', '**/extension/*', '**/constant/*']
+        def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
+        def kotlinDebugTree = fileTree(dir: "${buildDir}/tmp/kotlin-classes/debug", excludes: fileFilter)
+        classDirectories.from = files([debugTree], [kotlinDebugTree])
+
+        executionData(file("$buildDir/jacoco/testDebugUnitTest.exec"))
+
+        reports {
+
+            xml.enabled = true
+            html.enabled = true
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    tasks.withType(Test) {
+
+        finalizedBy(jacocoTestReport)
+
+        jacoco.includeNoLocationClasses = true
+
+        filter {
+            includeTestsMatching("*Test")
+        }
+    }
+}
+
+jacoco {
+
+    toolVersion = "0.8.5"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'junit:junit:4.13.2'
+    implementation files('libs\\fuel-kotlinx-serialization-2.3.1.jar')
+    implementation files('libs\\converter-gson-2.3.0.jar')
+
+    implementation files('libs\\retrofit2-kotlinx-serialization-converter-0.8.0.jar')
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation files('libs\\gson-2.8.5.jar')
+    implementation files('libs\\commons-io-2.4.jar')
+    implementation files('libs\\bytecoder.api-2021-07-23.jar')
+    implementation files('libs\\java.base-2021-07-23.jar')
+    implementation files('libs\\opencsv-4.6.jar')
+    implementation files('libs\\commons-csv-1.5.jar')
+    implementation files('libs\\com.android.volley-2015.05.28.jar')
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'androidx.test:core:1.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.8.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // optional - Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // Koin for Kotlin
+    implementation "org.koin:koin-core:$koin_version"
+    // Koin AndroidX Scope features
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    // Koin AndroidX ViewModel features
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    // Test helpers for LiveData
+    /*
+    testImplementation "android.arch.core:core-testing:1.1.1"
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
+     */
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    testImplementation "io.mockk:mockk:$mockk_version"
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    //androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+}
